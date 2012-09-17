@@ -1,0 +1,13 @@
+<%= render :partial => 'photo_menu' %>
+
+<div class="row-fluid">
+  <ul class="thumbnails">
+    <% for photo in photos %>
+      <li class="span3">
+        <a href="<%= edit_admin_photo_path(photo) %>" class="thumbnail">
+          <img src="<%= photo.photo_file.url %>" alt="">
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

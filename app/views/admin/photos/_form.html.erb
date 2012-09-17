@@ -1,0 +1,13 @@
+<%= simple_form_for [:admin, photo] do |f| %>
+  <%= f.error_messages %>
+  <%= f.input :name %>
+  <%= image_tag(photo.photo_file_url) if photo.photo_file_url %>
+  <%= f.input :photo_file %>
+  <%= f.hidden_field :photo_file_cache %>
+  <%= f.input :description, input_html: {rows: 3, class: "span6"} %>
+  <%= f.input :is_public %>
+
+  <div class="form-actions">
+    <%= f.submit  class: "btn btn-primary"  %>
+  </div>
+<% end %>
